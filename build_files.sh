@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "BUILD START"
-python -m pip install -r requirements.txt
-python manage.py collectstatic --noinput --clear
+python3 -m pip install --upgrade pip setuptools wheel
+python3 -m pip install -r requirements.txt
+python3 manage.py collectstatic --noinput --clear
 echo "BUILD END"
