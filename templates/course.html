@@ -1,0 +1,44 @@
+{% load static %}
+{% include "header.html" with active_page='course' %}
+    <!-- --------------- Home -------------- -->
+    <section class="about-home">
+        <h2>Our Courses</h2>
+
+    </section>
+
+    
+    <!-- ------------------------ Courses ---------------------- -->
+
+    <section class="courses">
+        <h1>Our Popular Courses</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, provident!</p>
+
+        <div class="course-box">
+            
+            {% for n in courseData %}        
+            <div onclick="window.location.href='/course-inner/{{n.course_slug}}'" class="course-card course-pointer">        
+                <img src="/media/{{n.courseImage}}">
+                <div class="details">
+                    <span>Updated {{n.courseUpdateDate}}</span>
+                    <h6>{{n.courseName}} </h6>
+                    
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <span>(239)</span>
+                    </div>
+                </div>
+                
+                <div class="cost">
+                    ${{n.coursePrice}}
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+{% include 'footer.html' %}

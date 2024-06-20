@@ -1,0 +1,15 @@
+{% load static %}
+{% include "header.html" with active_page='blog' %}
+
+   <section class="blog-container">
+        <div class="blogs blog-post">
+            <div class="post">
+                <img src="/media/{{blogdetails.blog_image}}">
+                <h3>{{blogdetails.blog_heading}}</h3>
+                <p>{{blogdetails.blog_paragraph | safe}}</p>
+            <a href="#">Read Next ?</a>
+            </div>
+        </div>
+   </section>
+   
+{% include 'footer.html' %}

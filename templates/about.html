@@ -1,0 +1,111 @@
+{% load static %}
+{% include "header.html" with active_page='about' %}
+
+    <!-- --------------- Home -------------- -->
+    <section class="about-home">
+        <h2>About Us</h2>
+
+    </section>
+
+    <!-- ----------------- about details --------------------- -->
+
+    <section class="about-details">
+        <div class="about-row">
+
+            <div class="about-content">
+                <img id="b-img" src="/static/images/a.png">
+            </div>
+
+            <div class="about-content">
+                <h4>{{aboutPageHeadings.details_heading}}</h4>
+                <p>{{aboutPageHeadings.details_content}}.</p>
+
+                
+                {% for n in aboutpagesubheadingdetails %}
+                    
+                
+                <div class="about-courses">
+                    <img src="/media/{{n.details_subHeadingIcon}}">
+                    <div class="fe-text">
+                        <h5>{{n.details_subHeading}}</h5>
+                        <p>{{n.details_subHeadingContent}}</p>
+                    </div>
+                </div>
+                
+                {% endfor %}
+                <!-- <div class="about-courses">
+                    <img src="/static/images/fe2.png">
+                    <div class="fe-text">
+                        <h5>Lifetime access</h5>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, nulla.</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------------------- Features ----------------------- -->
+
+    <section class="features">
+        <h1>Awesome Features</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nisi quae vero quasi, molestias maiores consequatur? Alias exercitationem doloribus veritatis.</p>
+
+        <div class="row">
+            
+            {% for n in featuresData %}
+                
+            
+            <div class="features-card">
+                <i class="{{n.featuresIcon}}"></i>
+                <h3>{{n.featursHeading}}</h3>
+                <p>{{n.featuresDescription}}</p>
+            </div>
+            
+            {% endfor %}
+
+        </div>
+    </section>
+
+
+
+
+    <!-- --------------------- Trusted By ------------------------ -->
+
+    <section class="trusted">
+        <h1>Trusted By</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, modi!</p>
+
+        
+        
+        
+        <div class="trust-box">
+
+            {% for n in trustedByIcons %}
+            <div class="trust-img">
+                <img src="/media/{{n.trustedByIcon}}">
+            </div>
+            
+            {% endfor %}
+            <!-- <div class="trust-img">
+                <img src="/static/images/trust (2).png">
+            </div>
+
+            <div class="trust-img">
+                <img src="/static/images/trust (3).png">
+            </div>
+
+            <div class="trust-img">
+                <img src="/static/images/trust (4).png">
+            </div>
+
+            <div class="trust-img">
+                <img src="/static/images/trust (5).png">
+            </div>
+
+            <div class="trust-img">
+                <img src="/static/images/trust (6).png">
+            </div> -->
+        </div>
+    </section>
+
+{% include 'footer.html' %}

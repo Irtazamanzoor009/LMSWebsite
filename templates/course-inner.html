@@ -1,0 +1,82 @@
+{% load static %}
+{% include "header.html" with active_page='course' %}
+
+    <!-- --------------- Home -------------- -->
+    <section class="about-home">
+        <h2>Enroll our Popular Courses and Skill Up</h2>
+
+    </section>
+
+
+    <!-- ------------------------ Courses ---------------------- -->
+
+    <secion class="course-inner">
+        <div class="overview">
+            <img class="course-img" src="/media/{{coursedetails.courseImage}}">
+            <div class="course-head">
+                <div class="c-name">
+                    <h2>{{coursedetails.courseName}}</h2>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>{{coursedetails.courseDesc}}</p>
+                </div>
+                <span>$ {{coursedetails.coursePrice}}</span>
+            </div>
+            <h3>Instructor</h3>
+            <div class="tutor">
+                <img src="/static/images/c4.jpg">
+                <div class="tutor-details">
+                    <h5>{{coursedetails.courseInstructor}}</h5>
+                    <p>{{coursedetails.courseInstructorJob}}</p>
+                </div>
+            </div>
+            <hr>
+            <h3>Course Overview</h3>
+            <p>{{coursedetails.CourseOverView | safe}}</p>
+            <hr>
+            <h3>What You'll Learn</h3>
+            <div class="learn">
+                
+                {% for n in courselearn %}                    
+                
+                <p><i class="far fa-check-circle"></i> {{n.learnContent}}</p>
+                
+                {% endfor %}
+                
+            </div>
+        </div>
+
+        <div class="enroll">
+            <h3>This course includes</h3>
+            <div class="learn">
+                
+                {% for n in courseinclude %}
+                    
+                
+                <p><i class="{{n.courseIncludeIcon}}"></i>{{n.courseIncludecontent}}</p>
+                
+                {% endfor %}
+                <!-- <p><i class="far fa-newspaper"></i> 75 articles</p>
+
+                <p><i class="far fa-cloud-download"></i> Downloable Resources</p>
+
+                <p><i class="far fa-infinity"></i> Fill Lifetime Access</p>
+
+                <p><i class="far fa-mobile-alt"></i> Access on mobile and TV</p>
+
+                <p><i class="far fa-paperclip"></i> Assignments</p>
+                <p><i class="fa-solid fa-trophy"></i>Certificate of complettion</p> -->
+                <div class="enroll-btn">
+                    <a href="#">Enroll Courses</a>
+                </div>
+            </div>
+
+        </div>
+    </secion>
+
+{% include 'footer.html' %}
