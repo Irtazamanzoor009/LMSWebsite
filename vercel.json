@@ -13,7 +13,7 @@
         "src": "build_files.sh",
         "use": "@vercel/static-build",
         "config": {
-          "distDir":"staticfiles_build"
+          "distDir":"staticfiles_build" 
         } 
       }
     ],
@@ -21,6 +21,10 @@
       {
         "src": "/static/(.*)",
         "dest": "static/$1"
+      },
+      {
+        "src": "/admin/(.*)",
+        "dest": "LMSWebsite/wsgi.py"
       },
       {
         "src": "/media/(.*)",
